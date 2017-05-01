@@ -1,1 +1,11 @@
-<h1> Hi </hi>
+<h1> Edit photo <%= @my_photo.id %></h1>
+
+<form action="/update_photo/<%= @my_photo.id %>">
+  Source
+  <input name="the_source" value="<%= @my_photo.source %>">
+  Caption
+  <input name="the_caption" value="<%= @my_photo.caption %>">
+
+  <button>Update Photo</button>
+
+</form>

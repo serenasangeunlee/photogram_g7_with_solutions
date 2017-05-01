@@ -3,18 +3,24 @@ class PicturesController < ApplicationController
   def new_form
 
     render("pic_templates/new_form.html.erb")
+
   end
 
   def create_row
 
-    @number_of_photos = Photo.count
+    p = Photo.new
+    p.caption = params["the_caption"]
+    p.source = params["the_source"]
+    p.save
+
+    @current_count = Photo.count
 
     render("pic_templates/create_row.html.erb")
   end
 
   def index
 
-    @list_of_photos = Photo.all
+    @list_of_photos = Photo.all.order(:created_at => :desc)
 
     render("pic_templates/index.html.erb")
   end
@@ -27,6 +33,9 @@ class PicturesController < ApplicationController
   end
 
   def edit_form
+
+    @my_photo = Photo.find(params["la_id"])
+
     render("pic_templates/edit_form.html.erb")
   end
 
