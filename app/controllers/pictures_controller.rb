@@ -10,7 +10,7 @@ class PicturesController < ApplicationController
 
     p = Photo.new
     p.caption = params["the_caption"]
-    p.source = params["the_source"]
+    p.image_url = params["image_url"]
     p.save
 
     @current_count = Photo.count
@@ -43,7 +43,7 @@ class PicturesController < ApplicationController
 
     @my_photo = Photo.find(params["la_id"])
     @my_photo.caption = params["the_caption"]
-    @my_photo.source = params["the_source"]
+    @my_photo.image_url = params["image_url"]
     @my_photo.save
 
     render("pic_templates/update_row.html.erb")
