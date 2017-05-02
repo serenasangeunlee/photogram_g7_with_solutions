@@ -8,10 +8,10 @@ class PicturesController < ApplicationController
 
   def create_row
 
-    p = Photo.new
-    p.caption = params["the_caption"]
-    p.source = params["the_source"]
-    p.save
+    @my_photo = Photo.new
+    @my_photo.caption = params["the_caption"]
+    @my_photo.source = params["the_source"]
+    @my_photo.save
 
     @current_count = Photo.count
 
