@@ -40,10 +40,22 @@ class PicturesController < ApplicationController
   end
 
   def update_row
+
+    @my_photo = Photo.find(params["la_id"])
+    @my_photo.caption = params["the_caption"]
+    @my_photo.source = params["the_source"]
+    @my_photo.save
+
     render("pic_templates/update_row.html.erb")
   end
 
   def destroy_row
+
+    @my_photo = Photo.find(params["da_id"])
+    @my_photo.destroy
+
+    @current_count = Photo.count
+
     render("pic_templates/destroy_row.html.erb")
   end
 

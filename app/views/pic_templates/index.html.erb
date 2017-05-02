@@ -6,8 +6,8 @@
 <div class="thumbnail">
 <img src="<%= a_photo.source %>">
 
-<a href="/photos/<%= photo.the_id %>" class="btn btn-secondary btn-block">Show details</a>
-<a class="btn btn-secondary btn-block">Edit </a>
-<a class="btn btn-secondary btn-block">Delete</a>
+<a href="/photos/<%= a_photo.id %>" class="btn btn-secondary btn-block">Show details</a>
+<a href="/photos/<%= a_photo.id %>/edit" class="btn btn-secondary btn-block">Edit </a>
+<a href="/delete_photo/<%= a_photo.id %>" class="btn btn-secondary btn-block">Delete</a>
 </div>
 <% end %>
