@@ -1,10 +1,10 @@
 <h1> Edit photo <%= @my_photo.id %></h1>
 
 <form action="/update_photo/<%= @my_photo.id %>">
-  <label for ="image_url">
+  <label for ="the_source">
   Image URL
 </label>
-  <input id="image_url" type="text" name="image_url" value="<%= @my_photo.source %>">
+  <input id="the_source" type="text" name="the_source" value="<%= @my_photo.source %>">
 <label for ="the_caption">
   Caption
 </label>
